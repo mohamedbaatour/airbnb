@@ -18,7 +18,7 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({
-  isOpen,
+  isOpen = false,
   onClose,
   onSubmit,
   title,
@@ -32,7 +32,7 @@ const Modal: React.FC<ModalProps> = ({
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    setShowModal(isOpen);
+    setShowModal(!!isOpen);
   }, [isOpen]);
 
   const handleClose = useCallback(() => {
@@ -81,7 +81,6 @@ const Modal: React.FC<ModalProps> = ({
     outline-none
     focus:outline-none
     bg-neutral-800/70
-
     "
       >
         <div
@@ -95,7 +94,7 @@ const Modal: React.FC<ModalProps> = ({
               mx-auto
               lg:h-auto
               md:h-auto
-                  "
+          "
         >
           <div
             className={`
@@ -162,12 +161,12 @@ const Modal: React.FC<ModalProps> = ({
                 "
                 >
                   {secondaryAction && secondaryActionLabel && (
-                  <Button
-                    outline
-                    disabled={disabled}
-                    label={secondaryActionLabel}
-                    onClick={handleSecondaryAction}
-                  />
+                    <Button
+                      outline
+                      disabled={disabled}
+                      label={secondaryActionLabel}
+                      onClick={handleSecondaryAction}
+                    />
                   )}
 
                   <Button
