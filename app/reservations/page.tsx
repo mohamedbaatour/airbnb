@@ -1,4 +1,5 @@
-import React from "react";
+import { Suspense } from 'react';
+import Loader from '../components/Loader';
 import EmptyState from "../components/EmptyState";
 import getCurrentUser from "../actions/getCurrentUser";
 import getReservations from "../actions/getReservations";
@@ -30,10 +31,12 @@ const ReservationsPage = async () => {
     }
 
     return (
+        <Suspense fallback={<Loader />}>
         <ReservationsClient
             reservations={reservations}
-            currentUser={currentUser}
-        />
+                currentUser={currentUser}
+            />
+        </Suspense>
     );
 };
 

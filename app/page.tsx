@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+import Loader from './components/Loader';
 import getCurrentUser from "./actions/getCurrentUser";
 import getListings, { IListingsParams } from "./actions/getListings";
 import Container from "./components/Container";
@@ -20,6 +22,7 @@ const Home = async ({ searchParams }: HomeProps) => {
 
   return (
     <Container>
+      <Suspense fallback={<Loader />}>
       <div className="
       pt-24
       grid
@@ -40,7 +43,8 @@ const Home = async ({ searchParams }: HomeProps) => {
             />
           )
         })}
-      </div>
+        </div>
+      </Suspense>
     </Container>
   );
 }

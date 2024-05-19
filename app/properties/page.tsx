@@ -1,4 +1,5 @@
-import React from "react";
+import { Suspense } from 'react';
+import Loader from '../components/Loader';
 import EmptyState from "../components/EmptyState";
 import PropertiesClient from "./PropertiesClient"
 
@@ -31,10 +32,12 @@ const PropertiesPage = async () => {
     }
 
     return (
+        <Suspense fallback={<Loader />}>
         <PropertiesClient
             listings={listings}
             currentUser={currentUser}
-        />
+            />
+        </Suspense>
     );
 };
 
