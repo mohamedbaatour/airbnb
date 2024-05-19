@@ -6,6 +6,7 @@ import Container from "./components/Container";
 import EmptyState from "./components/EmptyState";
 import ListingCard from "./components/listings/ListingCard";
 
+
 interface HomeProps {
   searchParams: IListingsParams
 }
@@ -19,6 +20,8 @@ const Home = async ({ searchParams }: HomeProps) => {
       <EmptyState showReset />
     )
   }
+
+
 
   return (
     <Container>
