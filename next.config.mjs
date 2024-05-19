@@ -1,11 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-images: {
+  experimental: {
+    missingSuspenseWithCSRBailout: false,
+  },
+  images: {
     domains: [
-    "avatars.githubusercontent.com",
-    "lh3.googleusercontent.com",
-      "res.cloudinary.com"
-    ]
-}
+      "avatars.githubusercontent.com",
+      "lh3.googleusercontent.com",
+      "res.cloudinary.com",
+    ],
+  },
 };
+
 export default nextConfig;
