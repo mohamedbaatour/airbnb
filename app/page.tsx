@@ -26,7 +26,7 @@ const Home = async ({ searchParams }: HomeProps) => {
   return (
     <Container>
       <Suspense fallback={<Loader />}>
-      <div className="
+        <div className="
       pt-24
       grid
       grid-cols-1
@@ -37,15 +37,15 @@ const Home = async ({ searchParams }: HomeProps) => {
       2xl:grid-cols-6
       gap-8
       ">
-        {listings.map((listing) => {
-          return (
-            <ListingCard
-              currentUser={currentUser}
-              key={listing.id}
-              data={listing}
-            />
-          )
-        })}
+          {listings.map((listing) => {
+            return (
+              <ListingCard
+                currentUser={currentUser}
+                key={listing.id}
+                data={listing}
+              />
+            )
+          })}
         </div>
       </Suspense>
     </Container>
@@ -54,4 +54,4 @@ const Home = async ({ searchParams }: HomeProps) => {
 
 export default Home
 
-
+export const dynamic = 'force-dynamic'
