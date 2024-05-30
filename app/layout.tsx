@@ -9,21 +9,21 @@ import getCurrentUser from "./actions/getCurrentUser";
 import { Suspense, lazy } from 'react';
 import SearchModal from "./components/modals/SearchModal";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 const RegisterModal = lazy(() => import('./components/modals/RegisterModal'));
 
 const RentModal = lazy(() => import('./components/modals/RentModal'));
 
 
-export const metadata: Metadata = {
-  title: "Airbnb",
-  description: "Airbnb",
-};
+// export const metadata: Metadata = {
+//   title: "Airbnb",
+//   description: "Airbnb",
+// };
 
-const font = Nunito({
-  subsets: ["latin"],
-});
+// const font = Nunito({
+//   subsets: ["latin"],
+// });
 
 export default async function RootLayout({
   children,
@@ -33,7 +33,9 @@ export default async function RootLayout({
   const currentUser = await getCurrentUser();
   return (
     <html lang="en">
-      <body className={font.className}>
+      <body
+        // className={font.className}
+      >
         <ToasterProvider />
         <SearchModal />
           <RentModal />
